@@ -157,3 +157,38 @@ dialog.add(label);*/
 
         // Exibe a janela
         janela.setVisible(true);*/
+
+/*
+         
+        ImageIcon faca = new ImageIcon(getClass().getResource("faca.png"));
+        Image faceRedimensionada = faca.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
+        ImageIcon facaLoja = new ImageIcon(faceRedimensionada);
+        
+        JLabel imgLabel = new JLabel();
+        imgLabel.setBounds(20,20,80,80);
+        imgLabel.setBackground(Color.GREEN);
+        imgLabel.setOpaque(true);
+        imgLabel.setIcon(facaLoja);
+        add(imgLabel);
+
+        JLabel imgLabel2 = new JLabel();
+        imgLabel2.setBounds(120,20,80,80);
+        imgLabel2.setBackground(Color.GREEN);
+        imgLabel2.setOpaque(true);
+        imgLabel2.setIcon(facaLoja);
+        add(imgLabel2);
+        
+        JLabel imgLabel3 = new JLabel();
+        imgLabel3.setBounds(220,20,80,80);
+        imgLabel3.setBackground(Color.GREEN);
+        imgLabel3.setOpaque(true);
+        imgLabel3.setIcon(facaLoja);
+        add(imgLabel3);
+        
+        JButton comprarArma = new JButton("Comprar");
+        	comprarArma.setBounds(20,100,80,20);
+        	comprarArma.setFont(new Font("Arial", Font.BOLD, 10));
+        	add(comprarArma);
+		*/
+
+
