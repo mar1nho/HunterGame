@@ -8,7 +8,7 @@ public class Personagem {
     int carisma = criacao.getCarismaPoints();
     int sorte = criacao.getLuckyPoints();
     Image imagem = criacao.imagem();
-
+    
     String nomeEscolhido = nome;
     int carismaPoints = carisma;
     int luckyPoints = sorte;
@@ -16,7 +16,7 @@ public class Personagem {
         int dinheiro = 50;
         int diasPassados = 0;
         int sono = 2;
-        int fome = 5;
+        int fome = 10;
         int energia = 7;
 }
 
