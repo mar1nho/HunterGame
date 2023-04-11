@@ -7,6 +7,7 @@ import javax.swing.border.Border;
 
 public class Criacao extends JFrame {
 
+    static ImageIcon yuri;
     static ImageIcon img;
     JPanel currentImagePanel =  null;
 
@@ -39,11 +40,20 @@ public class Criacao extends JFrame {
             title.setFont(new Font("Arial", Font.BOLD, 20));
         add(title);
 
+        // Personagem que introduz
+
+        ImageIcon mainPersonagem = new ImageIcon(getClass().getResource("/img/personagem.png"));
+            Image yuriPNG = mainPersonagem.getImage().getScaledInstance(120,120, Image.SCALE_SMOOTH);
+            ImageIcon yuriFoto = new ImageIcon(yuriPNG);
+
+            yuri = yuriFoto;
+
+
         //Seleção de personagem
 
         ImageIcon[] personagens = new ImageIcon[2];
-            personagens[0] = new ImageIcon(getClass().getResource("/cacador.png"));
-            personagens[1] = new ImageIcon(getClass().getResource("/caçadora.png"));
+            personagens[0] = new ImageIcon(getClass().getResource("/img/cacador.png"));
+            personagens[1] = new ImageIcon(getClass().getResource("/img/caçadora.png"));
 
             JLabel selectLabel = new JLabel();
             add(selectLabel);
@@ -264,9 +274,11 @@ public class Criacao extends JFrame {
         return img.getImage();
     }
 
+    public static Image yuri(){ return yuri.getImage();}
+
     public void fundoDeTela(){
         //Adiciona o fundo de tela.
-        ImageIcon fundo = new ImageIcon(getClass().getResource("/fundoCri.png"));
+        ImageIcon fundo = new ImageIcon(getClass().getResource("/img/fundoCri.png"));
         Image imagemRedimensionada = fundo.getImage().getScaledInstance(500,500, Image.SCALE_SMOOTH);
         ImageIcon fundoMenu = new ImageIcon(imagemRedimensionada);
         JLabel menuFundo = new JLabel(fundoMenu);
