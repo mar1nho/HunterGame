@@ -191,4 +191,21 @@ dialog.add(label);*/
         	add(comprarArma);
 		*/
 
+/*
 
+  imgLabel.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+                    // Verifica se a tecla direita foi pressionada
+                    int novaPosicaoX = imgLabel3.getX() + 10; // Adicione 10 à posição X atual (pode ajustar o valor como desejar)
+                    imgLabel3.setLocation(novaPosicaoX, imgLabel3.getY()); // Define a nova posição X para a JLabel
+                }
+            }
+        });
+
+        // Certifique-se de que o componente tenha o foco para receber eventos de teclado
+        imgLabel.setFocusable(true);
+        imgLabel.requestFocus();
+	
+	*/
