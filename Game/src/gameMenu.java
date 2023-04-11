@@ -18,7 +18,7 @@ public class gameMenu extends JFrame {
         setBackground(Color.RED);
 
         //Adiciona a imagem do alce
-        ImageIcon imagemOriginal = new ImageIcon(getClass().getResource("/moose.png"));
+        ImageIcon imagemOriginal = new ImageIcon(getClass().getResource("/img/moose.png"));
         Image imagemRedimensionada = imagemOriginal.getImage().getScaledInstance(160, 200, Image.SCALE_SMOOTH);
         ImageIcon imagem = new ImageIcon(imagemRedimensionada);
         JLabel imgLabel = new JLabel(imagem);
@@ -86,7 +86,7 @@ public class gameMenu extends JFrame {
 
     public void fundoDeTela(){
         //Adiciona o fundo de tela com o alce.
-        ImageIcon fundo = new ImageIcon(getClass().getResource("/fundo.jpg"));
+        ImageIcon fundo = new ImageIcon(getClass().getResource("/img/fundo.jpg"));
         Image imagemRedimensionada = fundo.getImage().getScaledInstance(500,500, Image.SCALE_SMOOTH);
         ImageIcon fundoMenu = new ImageIcon(imagemRedimensionada);
         JLabel menuFundo = new JLabel(fundoMenu);
