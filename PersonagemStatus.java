@@ -5,11 +5,14 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.Border;
 
 public class teste extends JFrame {
 	 
@@ -26,50 +29,76 @@ public class teste extends JFrame {
         setLocationRelativeTo(null);
         setLayout(null);
                
-        JLabel negocinho = new JLabel("FOME");
-        negocinho.setForeground(Color.white);
-        negocinho.setBounds(30, 20, 80, 25);
-        negocinho.setFont(new Font("Arial", Font.BOLD, 9));
-        negocinho.setOpaque(true);
-        negocinho.setBackground(Color.GREEN);
-        add(negocinho);
+        JLabel fome = new JLabel("FOME");
+        fome.setForeground(Color.BLACK);
+        fome.setBounds(30, 20, 80, 25);
+        fome.setFont(new Font("Arial", Font.BOLD, 9));
+        fome.setOpaque(true);
+        fome.setHorizontalAlignment(JLabel.CENTER);
+        fome.setBackground(Color.GREEN);
+        add(fome);
         
-        JButton botao = new JButton("Comer");
-        	botao.setBounds(30,400,80,30);
-        	botao.addActionListener(new ActionListener() {
+        JLabel energia = new JLabel("ENERGIA");
+        energia.setForeground(Color.BLACK);
+        energia.setBounds(30, 50, 100, 25);
+        energia.setFont(new Font("Arial", Font.BOLD, 9));
+        energia.setOpaque(true);
+        energia.setBackground(Color.YELLOW);
+        add(energia);
+        
+        JLabel label = new JLabel();
+        label.setBounds(25, 15, 114, 150);
+        label.setFont(new Font("Arial", Font.BOLD, 9));
+        label.setHorizontalAlignment(JLabel.CENTER);
+        Border border = BorderFactory.createLineBorder(Color.BLACK);
+        label.setBorder(border);
+        add(label);
+        
+        
+          
+        JButton comer = new JButton("Comer");
+        comer.setBounds(30,400,80,30);
+        comer.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					if(negocinho.getWidth() < 100 && negocinho.getWidth() >= 30) {
-					int largura = negocinho.getWidth() + 10;
-					negocinho.setBounds(30, 20, largura, 25);	
-					negocinho.setBackground(Color.green);
+					if(fome.getWidth() < 100 && fome.getWidth() >= 20) {
+						int largura = fome.getWidth() + 10;
+						fome.setBounds(30, 20, largura, 25);	
+						fome.setFont(new Font("Arial", Font.BOLD, 10));
+						fome.setBackground(Color.green);
+					if(fome.getWidth() <= 60 && fome.getWidth() >= 30) {
+						fome.setBackground(Color.ORANGE);
+				}
 					} else {
 						JOptionPane.showMessageDialog(null, "Sem fome");
 					}
 	            }
 	        });
-	        add(botao);
+	        add(comer);
 	        
-	    JButton botao2 = new JButton("Dormir");
-	    	botao2.setBounds(130,400,80,30);
-	    	botao2.addActionListener(new ActionListener() {
+	    JButton dormir = new JButton("Dormir");
+	    	dormir.setBounds(130,400,80,30);
+	    	dormir.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					if(negocinho.getWidth() > 30) {
-						int largura = negocinho.getWidth() - 10;
-						negocinho.setBounds(30, 20, largura, 25);
-						negocinho.setBackground(Color.GREEN);
-				}	if(negocinho.getWidth() <= 30) {
-						negocinho.setBackground(Color.red);
+					if(fome.getWidth() > 30) {
+						int largura = fome.getWidth() - 13;
+						int larguraEnergia = energia.getWidth() + 25;
+						energia.setBounds(30, 50, larguraEnergia, 25);
+						fome.setBounds(30, 20, largura, 25);
+						fome.setBackground(Color.GREEN);
+				}	if(fome.getWidth() <= 30) {
+						fome.setFont(new Font("Arial", Font.BOLD, 7));
+						fome.setBackground(Color.red);
 						JOptionPane.showMessageDialog(null, "Muita fome, você encontra dificuldade para dormir!");
-				}	if(negocinho.getWidth() <= 50) {
-						negocinho.setBackground(Color.red);
-				}	if(negocinho.getWidth() <= 50 && negocinho.getWidth() >= 40) {
-						negocinho.setBackground(Color.ORANGE);
+				}	if(fome.getWidth() <= 50) {
+						fome.setBackground(Color.red);
+				}	if(fome.getWidth() <= 60 && fome.getWidth() >= 30) {
+						fome.setBackground(Color.ORANGE);
 				}
 	         }
 	      });
-	        add(botao2);
+	        add(dormir);
 	        
 	    JButton botao3 = new JButton("Caçar");
 	    	botao3.setBounds(230,400,80,30);
@@ -93,3 +122,38 @@ dialog.setLocationRelativeTo(this); // Definir a posição da janela de diálogo
 // Adicionar componentes à janela de diálogo
 JLabel label = new JLabel("Esta é uma janela de diálogo");
 dialog.add(label);*/
+
+
+
+
+/*
+         JFrame janela = new JFrame();
+        janela.setSize(200, 200);
+        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Cria um novo JPanel
+        JPanel painel = new JPanel();
+        painel.setLayout(null);
+        painel.setBackground(Color.BLUE); // Define a cor de fundo como azul
+        janela.add(painel);
+
+        // Cria a primeira JLabel (fome)
+        JLabel fome = new JLabel("FOME");
+        fome.setForeground(Color.BLACK);
+        fome.setBounds(30, 20, 80, 25);
+        fome.setFont(new Font("Arial", Font.BOLD, 9));
+        fome.setOpaque(true);
+        fome.setBackground(Color.GREEN);
+        painel.add(fome);
+
+        // Cria a segunda JLabel (energia)
+        JLabel energia = new JLabel("ENERGIA");
+        energia.setForeground(Color.BLACK);
+        energia.setBounds(30, 50, 100, 25);
+        energia.setFont(new Font("Arial", Font.BOLD, 9));
+        energia.setOpaque(true);
+        energia.setBackground(Color.YELLOW);
+        painel.add(energia);
+
+        // Exibe a janela
+        janela.setVisible(true);*/
