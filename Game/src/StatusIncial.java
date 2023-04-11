@@ -1,10 +1,12 @@
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class StatusIncial extends JFrame {
 
     Personagem personagem = new Personagem();
+
 
     public StatusIncial( ) {
 
@@ -30,6 +32,23 @@ public class StatusIncial extends JFrame {
         characterPanel.setBorder(BorderFactory.createLineBorder(Color.WHITE, 5));
         characterPanel.add(selectLabel);
         add(characterPanel);
+
+        // Adiciona o Yuri :)
+
+        JLabel yuriLabel = new JLabel();
+            Image yuriFoto = personagem.yuri;
+            ImageIcon yuri = new ImageIcon(yuriFoto);
+            yuriLabel.setIcon(yuri);
+            yuriLabel.setBounds(50,290,200,200);
+            add(yuriLabel);
+
+         ImageIcon ballaoPri = new ImageIcon(getClass().getResource("/img/balloon.png"));
+            Image ballaoSegu = ballaoPri.getImage().getScaledInstance(450,160,Image.SCALE_SMOOTH);
+            ImageIcon ballao = new ImageIcon(ballaoSegu);
+         JLabel ballaoLabel = new JLabel();
+            ballaoLabel.setIcon(ballao);
+            ballaoLabel.setBounds(5,170,500,200);
+            add(ballaoLabel);
 
         // Informações
 
@@ -57,16 +76,33 @@ public class StatusIncial extends JFrame {
         idadeDoPersonagem.setForeground(Color.WHITE);
         add(idadeDoPersonagem);
 
+        // ACABOU INFORMAÇÕES
+
+        JButton iniciarJogo = new JButton("Iniciar");
+            iniciarJogo.setBounds(200,370,130,50);
+            iniciarJogo.setBackground(new Color(255,255,255));
+            iniciarJogo.setForeground(Color.BLACK);
+            iniciarJogo.setFont(new Font("Arial", Font.BOLD, 20));
+            iniciarJogo.setFocusPainted(false);
+            iniciarJogo.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    Jogo jogo = new Jogo();
+                    jogo.setVisible(true);
+                    setVisible(false);
+                }
+            });
+            add(iniciarJogo);
+
         personagem.criacao.setVisible(false);
         fundoDeTela();
         setVisible(true);
 
     }
 
-
     public void fundoDeTela(){
         //Adiciona o fundo de tela.
-        ImageIcon fundo = new ImageIcon(getClass().getResource("/fundoStatus.jpg"));
+        ImageIcon fundo = new ImageIcon(getClass().getResource("/img/fundoStatus.jpg"));
         Image imagemRedimensionada = fundo.getImage().getScaledInstance(500,500, Image.SCALE_SMOOTH);
         ImageIcon fundoMenu = new ImageIcon(imagemRedimensionada);
         JLabel menuFundo = new JLabel(fundoMenu);
