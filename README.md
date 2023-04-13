@@ -1,5 +1,5 @@
-# HunterGame
+# Hunter Game
 
 
-### Um jogo de caça...
-#### Em desenvolvimento!
+### A hunting game.
+#### Gonna finish when full learned SQL to store player informations.
