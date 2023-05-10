@@ -1,5 +1,5 @@
 # Hunter Game
 
 
-### A hunting game.
-#### Gonna finish when full learned SQL to store player informations.
+### A little mini-game that I made to endorse the learning Java.
+### Game stoped due new projects.
